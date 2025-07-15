@@ -23,6 +23,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba.Infraestructure.Cont
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba.Infraestructure.Utils", "Prueba.Infraestructure.Utils\Prueba.Infraestructure.Utils.csproj", "{BC6CEA73-8A95-4DBB-AEFD-25CE39081D67}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegralTest", "IntegralTest", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba.IntegralTest", "Prueba.IntegralTest\Prueba.IntegralTest.csproj", "{C9EF952A-B920-4D7B-BE08-4B8E56617777}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8D955A96-3601-436E-9E40-BBA7F38094B4} = {8D955A96-3601-436E-9E40-BBA7F38094B4}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +60,10 @@ Global
 		{BC6CEA73-8A95-4DBB-AEFD-25CE39081D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC6CEA73-8A95-4DBB-AEFD-25CE39081D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC6CEA73-8A95-4DBB-AEFD-25CE39081D67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9EF952A-B920-4D7B-BE08-4B8E56617777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9EF952A-B920-4D7B-BE08-4B8E56617777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9EF952A-B920-4D7B-BE08-4B8E56617777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9EF952A-B920-4D7B-BE08-4B8E56617777}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +75,7 @@ Global
 		{157F4D71-7AD2-45D0-BA85-4564E1BEBFFF} = {2F97A5CB-619B-438A-A3EC-BD57A7E8586E}
 		{3868367A-222C-4EB6-84EA-A64697D0F770} = {D9E66A82-7EA4-4B56-B012-DCFACF70FE3E}
 		{BC6CEA73-8A95-4DBB-AEFD-25CE39081D67} = {D9E66A82-7EA4-4B56-B012-DCFACF70FE3E}
+		{C9EF952A-B920-4D7B-BE08-4B8E56617777} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4ED6B97-FDD3-40B5-9FA2-45AB45DD5503}

@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Prueba.Domain.Entities.Model;
 using Prueba.Domain.Entities.Request;
 using Prueba.Domain.Interfaces;
@@ -27,23 +28,25 @@ namespace Prueba.Application.Services
             });
         }
 
-        public string Auth(AuthRequest payload)
+        public string  Auth(AuthRequest payload)
         {
-            var student = Get().FirstOrDefault(s => s.Usr_DocumentNumber.Equals(payload.UserName))
+            var user = Get()
+                .Include(s => s.Rols)
+                .FirstOrDefault(s => s.Usr_DocumentNumber.Equals(payload.UserName))
                 ?? throw new InvalidDataException("Usuario no registrado.");
-            bool isValid = PasswordHelper.VerifyPassword(payload.Password, student.Password);
+            bool isValid = PasswordHelper.VerifyPassword(payload.Password, user.Password);
 
             if (!isValid)
                 throw new InvalidDataException("Contraseña incorrecta");
 
-            return GenerateJwtToken(student);
+            return GenerateJwtToken(user);
         }
 
         private string GenerateJwtToken(Users user)
         {
             var claims = new[]
             {
-                new Claim("Rol", "User"),
+                new Claim("Rol", user.Rols.Rol_Description),
                 new Claim("UserId", user.Usr_RolId.ToString()),
                 new Claim("Name", user.Usr_FirstName),
                 new Claim("LastName", user.Usr_LastName),

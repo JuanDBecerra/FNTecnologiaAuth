@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Prueba.Domain.Entities.Dtos;
-using Prueba.Domain.Entities.Model;
 using Prueba.Domain.Entities.Request;
 using Prueba.Domain.Entities.Response;
 using Prueba.Domain.Interfaces;
